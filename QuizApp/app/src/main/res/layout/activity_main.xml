@@ -22,6 +22,7 @@
         android:layout_marginEnd="121dp"
         android:layout_marginRight="121dp"
         android:text="Start Quiz"
+        android:onClick="startQuiz"
         />
 
     <Button
