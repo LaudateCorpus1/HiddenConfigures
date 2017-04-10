@@ -5,6 +5,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/soothing_blue"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -21,17 +22,17 @@
         android:layout_marginBottom="198dp"
         android:layout_marginEnd="121dp"
         android:layout_marginRight="121dp"
-        android:text="Start Quiz"
-        />
+        android:text="@string/start_Quiz"
+        tools:ignore="RelativeOverlap" />
 
     <Button
         android:id="@+id/results"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Past Results"
         android:layout_above="@+id/help"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="59dp" />
+        android:layout_marginBottom="59dp"
+        android:text="@string/pass_Results" />
 
     <Button
         android:id="@+id/help"
@@ -40,9 +41,9 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:text="Help"
         android:drawableLeft="@android:drawable/ic_menu_help"
-        />
+        android:onClick="displayHelp"
+        android:text="@string/help_Button" />
 
     <Button
         android:id="@+id/about"
@@ -51,8 +52,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/help"
-        android:text="About"
-        android:drawableLeft="@android:drawable/ic_menu_info_details"/>
+        android:drawableLeft="@android:drawable/ic_menu_info_details"
+        android:text="@string/about_Button"
+        tools:ignore="RelativeOverlap" />
 
 </RelativeLayout>
