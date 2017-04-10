@@ -23,4 +23,10 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(TEST_MESSAGE,"We made it");
         startActivity(intent);
     }
+
+    /** Called when the user taps the Help button */
+    public void displayHelp(View view){
+        Intent intent = new Intent(this, DisplayHelpActivity.class);
+        startActivity(intent);
+    }
 }
