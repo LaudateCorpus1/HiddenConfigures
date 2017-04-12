@@ -11,6 +11,11 @@ public class mainMenuButtons : MonoBehaviour {
         SceneManager.LoadScene("Help");
     }
 
+    public void Main_Menu_Button_Click()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void Disclaimer_No_Continue_Button_Click()
     {
         SceneManager.LoadScene("Disclaimer_No_Continue");
@@ -23,7 +28,7 @@ public class mainMenuButtons : MonoBehaviour {
 
     public void Instructions_Button_Click()
     {
-        SceneManager.LoadScene("Instructions");
+        SceneManager.LoadScene("Instructions_Continue");
     }
 
     public void Start_Button_Click()
@@ -34,5 +39,15 @@ public class mainMenuButtons : MonoBehaviour {
     public void Past_Results_Button_Click()
     {
         SceneManager.LoadScene("PastResults");
+    }
+
+    public void Phase1_Button_Click()
+    {
+        SceneManager.LoadScene("Phase_1_Start");
+    }
+
+    public void Example_Result_Button_Click()
+    {
+        SceneManager.LoadScene("Example Result");
     }
 }

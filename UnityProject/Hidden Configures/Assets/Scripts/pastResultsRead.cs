@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class pastResultsRead : MonoBehaviour {
 
-    public void UpdateScores()
+   /* public void UpdateScores()
     {
         string fileName = "Assets/Resources/highscores.csv";
         if (new FileInfo("Assets/Resources/highscores.csv").Length != 0)
@@ -76,11 +77,12 @@ public class pastResultsRead : MonoBehaviour {
 
 
 }
-public class ReverseSort : IComparer
-{
-    public int Compare(object x, object y)
+    public class ReverseSort : IComparer
     {
-        // reverse the arguments
-        return Comparer.Default.Compare(y, x);
-    }
+        public int Compare(object x, object y)
+        {
+            // reverse the arguments
+            return Comparer.Default.Compare(y, x);
+        }
+    }*/
 }
