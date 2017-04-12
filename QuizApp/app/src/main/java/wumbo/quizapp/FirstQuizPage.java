@@ -3,6 +3,7 @@ package wumbo.quizapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
 public class FirstQuizPage extends AppCompatActivity {
@@ -17,5 +18,8 @@ public class FirstQuizPage extends AppCompatActivity {
 
         TextView textView = (TextView) findViewById(R.id.textView);
         textView.setText(message);
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
     }
 }

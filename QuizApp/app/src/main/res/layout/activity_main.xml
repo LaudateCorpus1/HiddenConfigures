@@ -23,7 +23,7 @@
         android:layout_marginEnd="121dp"
         android:layout_marginRight="121dp"
         android:text="@string/start_Quiz"
-        tools:ignore="RelativeOverlap" />
+        tools:ignore="RelativeOverlap"
         android:onClick="startQuiz"
         />
 
