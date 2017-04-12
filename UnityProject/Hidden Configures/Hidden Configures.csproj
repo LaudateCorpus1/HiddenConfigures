@@ -81,6 +81,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\BLACKISH\SwipeControl\Scripts\C#\CreditsDisplay.cs" />
+    <Compile Include="Assets\BLACKISH\SwipeControl\Scripts\C#\ExampleGUIBorders.cs" />
+    <Compile Include="Assets\BLACKISH\SwipeControl\Scripts\C#\ImageDisplay.cs" />
+    <Compile Include="Assets\BLACKISH\SwipeControl\Scripts\C#\ImageDisplayNoFade.cs" />
+    <Compile Include="Assets\BLACKISH\SwipeControl\Scripts\C#\ImageDisplayXYHorizontal.cs" />
+    <Compile Include="Assets\BLACKISH\SwipeControl\Scripts\C#\ImageDisplayXYVertical.cs" />
+    <Compile Include="Assets\BLACKISH\SwipeControl\Scripts\C#\SwipeControl.cs" />
+    <Compile Include="Assets\BLACKISH\SwipeControl\Scripts\C#\SwipeControlXY.cs" />
+    <Compile Include="Assets\Scripts\SwipeInput.cs" />
     <Compile Include="Assets\Scripts\disclaimerButtons.cs" />
     <Compile Include="Assets\Scripts\mainMenuButtons.cs" />
     <Compile Include="Assets\Scripts\pastResultsRead.cs" />
