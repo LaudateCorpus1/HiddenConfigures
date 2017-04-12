@@ -30,7 +30,8 @@ public class SwipeInput : MonoBehaviour
 
     void removeNext()
     {
-        if(counter == 10)
+        
+        if (counter == 10)
         {
             t10.gameObject.SetActive(false);
         }
