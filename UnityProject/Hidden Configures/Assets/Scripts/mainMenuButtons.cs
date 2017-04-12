@@ -23,7 +23,7 @@ public class mainMenuButtons : MonoBehaviour {
 
     public void Instructions_Button_Click()
     {
-        SceneManager.LoadScene("Instructions");
+        SceneManager.LoadScene("Instructions_Continue");
     }
 
     public void Start_Button_Click()
@@ -34,5 +34,10 @@ public class mainMenuButtons : MonoBehaviour {
     public void Past_Results_Button_Click()
     {
         SceneManager.LoadScene("PastResults");
+    }
+
+    public void Phase1_Button_Click()
+    {
+        SceneManager.LoadScene("Phase_1_Start");
     }
 }

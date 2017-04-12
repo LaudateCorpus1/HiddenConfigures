@@ -14,15 +14,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Disclaimer_No_Continue.unity
     guid: 6ced1a2a5b065504fa67f648cd5898ba
-  - enabled: 1
-    path: Assets/Scenes/Help.unity
+  - enabled: 0
+    path: 
     guid: 6d64edc1d6b86d444abfaa6905ad2eb8
   - enabled: 1
-    path: Assets/Scenes/Instructions.unity
+    path: Assets/Scenes/Help.unity
     guid: 6b471656a9f63b04e8531a1c455e7b1b
   - enabled: 1
-    path: Assets/Scenes/Start.unity
+    path: Assets/Scenes/Phase_1_Start.unity
     guid: b56bb45bf4e699f4a99e88a53e879cb0
   - enabled: 1
     path: Assets/Scenes/PastResults.unity
     guid: b415c4512ab487e4f8c28b8a83456f53
+  - enabled: 1
+    path: Assets/Scenes/Instructions_Continue.unity
+    guid: 0256c52427cda1546a4649f659f8bc2e
