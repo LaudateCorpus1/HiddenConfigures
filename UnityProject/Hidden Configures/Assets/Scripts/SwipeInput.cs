@@ -3,9 +3,19 @@ using UnityEngine.SceneManagement;
 
 public class SwipeInput : MonoBehaviour
 {
-    private Vector3 startPosition = Vector3.zero;
-    private Vector3 endPosition = Vector3.zero;
+    Vector3 startPos;
+    Vector3 endPos;
+
+    public float maxTime;
+    public float minSwipeDist;
+
+    float startTime;
+    float endTime;
+
     public int counter = 10;
+
+    float swipeDistance;
+    float swipeTime;
 
     public GameObject t1;
     public GameObject t2;
@@ -68,33 +78,47 @@ public class SwipeInput : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))    // swipe begins
+        if(Input.touchCount > 0)
         {
-            startPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        }
-        if (Input.GetMouseButtonUp(0))    // swipe ends
-        {
-            endPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        }
-
-        if (startPosition != endPosition && startPosition != Vector3.zero && endPosition != Vector3.zero)
-        {
-            float deltaX = endPosition.x - startPosition.x;
-            float deltaY = endPosition.y - startPosition.y;
-            if ((deltaX > 5.0f || deltaX < -5.0f) && (deltaY >= -1.0f || deltaY <= 1.0f))
+            Touch touch = Input.GetTouch(0);
+            if(touch.phase == TouchPhase.Began)
             {
-                if (startPosition.x < endPosition.x) // swipe LTR
+                startTime = Time.time;
+                startPos = touch.position;
+            }
+            else if (touch.phase == TouchPhase.Ended)
+            {
+                endTime = Time.time;
+                endPos = touch.position;
+
+                swipeDistance = (endPos - startPos).magnitude;
+                swipeTime = endTime - startTime;
+
+                if(swipeTime < maxTime && swipeDistance > minSwipeDist)
                 {
-                    print("LTR");
-                    removeNext();
-                }
-                else // swipe RTL
-                {
-                    print("RTL");
-                    removeNext();
+                    swipe();
                 }
             }
-            startPosition = endPosition = Vector3.zero;
         }
+    }
+
+    void swipe()
+    {
+        Vector2 distance = endPos - startPos;
+        if(Mathf.Abs(distance.x) > Mathf.Abs(distance.y))
+        {
+            Debug.Log("Horizontal");
+            if(distance.x > 0)
+            {
+                Debug.Log("Right Swipe");
+                removeNext();
+            }
+            if(distance.x < 0)
+            {
+                Debug.Log("Left Swipe");
+                removeNext();
+            }
+        }
+        
     }
 }

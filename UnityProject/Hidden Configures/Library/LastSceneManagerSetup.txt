@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Instructions_Continue.unity
+- path: Assets/Scenes/Example Result.unity
   isLoaded: 1
   isActive: 1
