@@ -28,9 +28,11 @@ public class SwipeInput : MonoBehaviour
     public GameObject t9;
     public GameObject t10;
 
+
+
     void removeNext()
     {
-        
+        Scene currentScene = SceneManager.GetActiveScene();
         if (counter == 10)
         {
             t10.gameObject.SetActive(false);
@@ -70,12 +72,23 @@ public class SwipeInput : MonoBehaviour
         if (counter == 1)
         {
             t1.gameObject.SetActive(false);
-            SceneManager.LoadScene("Results");
+            string sceneName = currentScene.name;
+            if(sceneName == "Phase_2_Start")
+            {
+                SceneManager.LoadScene("Results");
+            }
+            else if(sceneName == "Phase_1_Start")
+            {
+                SceneManager.LoadScene("Phase_2_Transition");
+            }
         }
         counter--;
     }
-    
 
+    private void Start()
+    {
+        
+    }
 
     void Update()
     {

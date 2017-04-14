@@ -35,3 +35,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Example Result.unity
     guid: 2614a7180b141d445aa573e126a60f63
+  - enabled: 1
+    path: Assets/Scenes/Phase_2_Start.unity
+    guid: 56d4b1401d1947e469677289f3b5edfa
+  - enabled: 1
+    path: Assets/Scenes/Phase_2_Transition.unity
+    guid: f49b613711f30f04c962cce444f66721

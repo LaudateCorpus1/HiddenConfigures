@@ -50,4 +50,9 @@ public class mainMenuButtons : MonoBehaviour {
     {
         SceneManager.LoadScene("Example Result");
     }
+
+    public void Phase_2_Start_Button_Click()
+    {
+        SceneManager.LoadScene("Phase_2_Start");
+    }
 }
