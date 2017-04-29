@@ -1,0 +1,9 @@
+QuizApp@0.0.1 /Users/philipbed813/WebstormProjects/QuizApp
+└─┬ prettier@1.2.2 
+  ├── ast-types@0.9.8 
+  ├── babylon@7.0.0-beta.8 
+  ├── flow-parser@0.43.0 
+  ├── get-stdin@5.0.1 
+  ├── glob@7.1.1 
+  └── jest-validate@19.0.0 
+
