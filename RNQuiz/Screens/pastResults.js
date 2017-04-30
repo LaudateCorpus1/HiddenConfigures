@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         backgroundColor: 'white',
         width: width * .8,
-        height: 80,
+        height: 120,
         marginTop: 40,
         elevation: 8
     },

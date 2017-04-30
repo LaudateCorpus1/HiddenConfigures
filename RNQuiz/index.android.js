@@ -58,6 +58,7 @@ class HomeScreen extends Component {
 
 
                 <Image
+                    style={styles.img}
                     source={require('./img/hiddenConfigures.jpg')}
                 />
                 <View style={styles.wrapper}>
@@ -73,7 +74,7 @@ class HomeScreen extends Component {
                         text="Past Results"
                         buttonStyle={indexStyles.middleButton}/>
                 </View>
-                <View style={styles.optionsContainer1}>
+                <View style={styles.optionsContainer}>
                     <NativeAndroidButton navigate={navigate}
                                          destination="Help"
                                          text="Help"
@@ -104,24 +105,28 @@ const styles = StyleSheet.create({
     wrapper:{
         justifyContent: 'center',
         alignItems: 'center',
-        top: 225,
+        top: 25,
     },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
   },
-    optionsContainer1:{
+    optionsContainer:{
         flex: 1,
         flexDirection: 'row',
         justifyContent:'space-between',
-        bottom:-300,
+        bottom: -70,
     },
     optionsContainer2:{
         justifyContent:'flex-start',
         alignItems:'flex-end',
-        bottom:175,
-    }
+        bottom: 175,
+    },
+    img:{
+        height: 200,
+        width: width,
+    },
 });
 
 export const QuizApp = StackNavigator({

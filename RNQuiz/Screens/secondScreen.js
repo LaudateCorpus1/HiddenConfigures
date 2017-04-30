@@ -38,7 +38,7 @@ export default class SecondScreen extends Component {
 
     constructor(props){
         super(props);
-        content = this.shuffle(content);
+        content.items = this.shuffle(content.items);
         this.state = {
             progress: 0,
             percentage: 0,

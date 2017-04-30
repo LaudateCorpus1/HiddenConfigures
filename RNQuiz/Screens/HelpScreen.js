@@ -52,6 +52,8 @@ const styles = StyleSheet.create({
     bodyText: {
         textAlign:'center',
         fontSize: 20,
+        width: width*.8,
+        marginLeft: 30,
     }
 
 });

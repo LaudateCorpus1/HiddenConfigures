@@ -35,7 +35,7 @@ export default class FirstScreen extends Component {
     constructor(props){
         super(props);
 
-        content = this.shuffle(content);
+        content.items = this.shuffle(content.items);
 
         this.state = {
             progress: 0,
@@ -122,7 +122,7 @@ export default class FirstScreen extends Component {
 
 
                     <Button
-                        title="Start phase two"
+                        title="Start phase one"
                         accessibilityLabel="Start phase one"
                         color="#841584"
                         onPress={this.start.bind(this)}
