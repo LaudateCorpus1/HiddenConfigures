@@ -9,7 +9,7 @@ import {Text,View, StyleSheet, Dimensions, Linking} from 'react-native';
 
 export default class DisclaimerScreen extends Component{
     static navigationOptions = {
-        title: 'Help',
+        title: 'Disclaimer',
     } ;
 
     render(){

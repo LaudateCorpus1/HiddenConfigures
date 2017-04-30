@@ -1,32 +1,41 @@
 /**
  * Created by philipbed813 on 4/29/17.
  */
+/**
+ * Created by philipbed813 on 4/29/17.
+ */
 import React, {Component} from 'react';
 import {Text,View, StyleSheet, Dimensions} from 'react-native';
 
-export default class HelpScreen extends Component{
+import NativeAndroidButton from '../components/NativeAndroidButton'
+import indexStyles from "../stylesheets";
+
+export default class FinalScreen extends Component{
     static navigationOptions = {
-        title: 'Help',
+        title: 'Finished',
     } ;
 
     render(){
 
+        let {navigate} = this.props.navigation;
+
         return (
             <View style={styles.container}>
                 <Text style={styles.titleText}>
-                    Instructions:
+                    Your Final Score is:
                 </Text>
 
                 <Text style={styles.bodyText}>
                     {'\n\n\n\n'}
-                    When the test begins you will be provided with a series of words. Two categories will be
-                    located on the top-left and top-right. As quickly as possible, you will swipe thee words
-                    into the left or right side of the screen, towards the category you associate the image with.
-
-                    You can view your previous results by pressing the "Past Results" button on the main menu.
+                    75%
                 </Text>
 
-
+                <NativeAndroidButton
+                    navigate={navigate}
+                    destination="QuizResults"
+                    text="View Past Results"
+                    buttonStyle={indexStyles.middleButton}
+                />
             </View>
 
         );
@@ -42,16 +51,20 @@ const styles = StyleSheet.create({
         height: height,
         width: width,
         backgroundColor: '#F5FCFF',
+        // justifyContent: 'center',
+        alignItems: 'center',
     },
     titleText: {
         textAlign: 'center',
-        fontSize: 24,
+        fontSize: 34,
         fontWeight:'bold'
     },
 
     bodyText: {
-        textAlign:'left',
-        fontSize: 20,
+        textAlign:'center',
+        color: '#a7dbde',
+        fontSize: 34,
+        paddingBottom: 70,
     }
 
 });

@@ -1,14 +1,12 @@
 /**
  * Created by philipbed813 on 4/29/17.
  */
-
 import React, {Component} from 'react';
 import {Text,View, StyleSheet, Dimensions} from 'react-native';
 
 import NativeAndroidButton from '../components/NativeAndroidButton'
 import indexStyles from "../stylesheets";
-
-export default class PastResultsScreen extends Component{
+export default class ResultsAfterTestScreen extends Component{
     static navigationOptions = {
         title: 'Past Results',
     } ;
@@ -16,9 +14,22 @@ export default class PastResultsScreen extends Component{
     render(){
 
         let {navigate} = this.props.navigation;
+        let m = new Date();
+        let dateString =
+            ("0" + (m.getUTCMonth()+1)).slice(-2) + "/" +
+            ("0" + m.getUTCDate()).slice(-2)+"/"+
+            m.getUTCFullYear().toString().substring(2,4) ;
 
         return (
             <View style={styles.container}>
+                <View style={styles.item}>
+
+                    <Text style={styles.text}>Date: {dateString}</Text>
+
+                    <Text>{'\n'}</Text>
+
+                    <Text style={styles.text}>Score: 75%</Text>
+                </View>
                 <View style={styles.item}>
 
                     <Text style={styles.text}>Date: 04/22/17</Text>
@@ -35,6 +46,12 @@ export default class PastResultsScreen extends Component{
 
                     <Text style={styles.text}>Score: 65%</Text>
                 </View>
+
+                <NativeAndroidButton
+                    navigate={navigate}
+                    destination="Home"
+                    text="Return Home"
+                    buttonStyle={[indexStyles.middleButton,{marginTop:50}]}/>
             </View>
 
         );

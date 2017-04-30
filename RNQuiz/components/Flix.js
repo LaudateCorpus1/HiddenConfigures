@@ -24,16 +24,18 @@ export default class Flix extends Component {
         this.state = {
             pan: new Animated.ValueXY(),
             enter: new Animated.Value(0.5),
-            person: People[0],
+            items: this.props.items,
+            item: this.props.items[0],
+            error:false,
         }
     }
 
     _goToNextPerson() {
-        let currentPersonIdx = People.indexOf(this.state.person);
-        let newIdx = currentPersonIdx + 1;
+        let currentItemIdx = this.state.items.indexOf(this.state.item);
+        let newIdx = currentItemIdx + 1;
 
         this.setState({
-            person: People[newIdx > People.length - 1 ? 0 : newIdx]
+            item: this.state.items[newIdx > this.state.items.length - 1 ? 0 : newIdx]
         });
     }
 
@@ -72,6 +74,17 @@ export default class Flix extends Component {
                     velocity = clamp(vx * -1, 3, 5) * -1;
                 }
 
+                // swiped left and shouldve swiped right
+                if (this.state.pan.x._value  < 0 && this.state.item.direction > 0 ){
+                    this.setState({error:true});
+                }
+                // swiped right and should swiped left
+                else if (this.state.pan.x._value   > 0 && this.state.item.direction < 0 ){
+                    this.setState({error:true});
+                }
+
+
+
                 if (Math.abs(this.state.pan.x._value) > SWIPE_THRESHOLD) {
                     Animated.decay(this.state.pan, {
                         velocity: {x: velocity, y: vy},
@@ -83,6 +96,8 @@ export default class Flix extends Component {
                         friction: 4
                     }).start()
                 }
+
+                // this.setState({error:false});
             }
         });
     }
@@ -90,8 +105,14 @@ export default class Flix extends Component {
     _resetState() {
         this.state.pan.setValue({x: 0, y: 0});
         this.state.enter.setValue(0);
-        this._goToNextPerson();
+
+        if (!this.state.error) {
+            let currentItemIdx = this.state.items.indexOf(this.state.item);
+            this._goToNextPerson();
+            this.props.updateProgress(currentItemIdx);
+        }
         this._animateEntrance();
+        this.setState({error:false});
     }
 
     render() {
@@ -113,18 +134,25 @@ export default class Flix extends Component {
         let nopeScale = pan.x.interpolate({inputRange: [-150, 0], outputRange: [1, 0.5], extrapolate: 'clamp'});
         let animatedNopeStyles = {transform: [{scale: nopeScale}], opacity: nopeOpacity};
 
+        let nopeText = this.state.error ?
+                            <Animated.View style={styles.nope}>
+                                <Text style={[styles.nopeText]}>Nope!</Text>
+                            </Animated.View>
+                        : null;
+
+
         return (
             <View style={styles.container}>
                 <Animated.View style={[styles.card, animatedCardStyles]} {...this._panResponder.panHandlers}>
+                    <Text style={styles.questionText}>{this.state.item.topic}</Text>
                 </Animated.View>
-
-                <Animated.View style={[styles.nope, animatedNopeStyles]}>
-                    <Text style={styles.nopeText}>Nope!</Text>
-                </Animated.View>
-
-                <Animated.View style={[styles.yup, animatedYupStyles]}>
-                    <Text style={styles.yupText}>Yup!</Text>
-                </Animated.View>
+                {nopeText}
+                {/*<Animated.View style={[styles.nope, animatedNopeStyles]}>*/}
+                    {/*<Text style={styles.nopeText}>Nope!</Text>*/}
+                {/*</Animated.View>*/}
+                {/*<Animated.View style={[styles.yup, animatedYupStyles]}>*/}
+                    {/*<Text style={styles.yupText}>Yup!</Text>*/}
+                {/*</Animated.View>*/}
             </View>
         );
     }
@@ -135,7 +163,7 @@ let styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-
+        width: width,
         position: 'absolute',
     },
     card: {
@@ -167,14 +195,19 @@ let styles = StyleSheet.create({
         borderColor: 'red',
         borderWidth: 2,
         position: 'absolute',
-        bottom: 20,
+        bottom: -110,
         padding: 20,
         borderRadius: 5,
-        left: 20,
+        left: 140,
     },
     nopeText: {
         fontSize: 16,
         color: 'red',
+    },
+
+    questionText: {
+        fontSize: 30,
+        textAlign:'center'
     }
 });
 

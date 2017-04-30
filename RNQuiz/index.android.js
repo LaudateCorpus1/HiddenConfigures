@@ -20,11 +20,14 @@ import PastResultsScreen from './Screens/pastResults';
 import NativeAndroidButton from './components/NativeAndroidButton';
 
 import FirstScreen from './Screens/firstScreen';
+import SecondScreen from './Screens/secondScreen';
 import HelpScreen from './Screens/HelpScreen';
 import DisclaimerScreen from './Screens/disclaimer';
+import FinalScreen from './Screens/FinalScreen';
 
 import Flix from './components/Flix';
 import indexStyles from './stylesheets';
+import ResultsAfterTestScreen from "./Screens/ResultsAfterTestScreen";
 
 
 class HomeScreen extends Component {
@@ -119,12 +122,15 @@ const styles = StyleSheet.create({
     }
 });
 
-const QuizApp = StackNavigator({
+export const QuizApp = StackNavigator({
     Home: {screen: HomeScreen},
     Results: {screen: PastResultsScreen},
     StartQuiz: {screen: FirstScreen},
     Help: {screen: HelpScreen},
     About: {screen: DisclaimerScreen},
+    SecondPhase: {screen:SecondScreen},
+    LastPhase: {screen: FinalScreen},
+    QuizResults: {screen: ResultsAfterTestScreen}
 });
 
 AppRegistry.registerComponent('QuizApp', () => QuizApp);
