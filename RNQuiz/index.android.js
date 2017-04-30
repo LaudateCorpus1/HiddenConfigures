@@ -12,7 +12,8 @@ import {
     View,
     Button,
     TouchableNativeFeedback,
-    Dimensions
+    Dimensions,
+    Image
 } from 'react-native';
 
 import { StackNavigator } from 'react-navigation';
@@ -55,9 +56,10 @@ class HomeScreen extends Component {
 
             <View style={styles.container}>
 
-                    {/*<Button onPress={() => navigate('Results')}*/}
-                            {/*title="Past Results"*/}
-                            {/*color="red"/>*/}
+
+                <Image
+                    source={require('./img/hiddenConfigures.jpg')}
+                />
                 <View style={styles.wrapper}>
                     <NativeAndroidButton
                         navigate={navigate}
@@ -78,7 +80,7 @@ class HomeScreen extends Component {
                                          buttonStyle={indexStyles.bottomButton}/>
                     <NativeAndroidButton navigate={navigate}
                                          destination="About"
-                                         text="About"
+                                         text="Disclaimer"
                                          buttonStyle={indexStyles.bottomButton}/>
                 </View>
 
@@ -97,7 +99,7 @@ const styles = StyleSheet.create({
     // flex: 1,
     height:height,
     width:width,
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#DCF2FF',
   },
     wrapper:{
         justifyContent: 'center',

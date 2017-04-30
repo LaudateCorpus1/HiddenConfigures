@@ -11,7 +11,7 @@ export default indexStyles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+        backgroundColor: '#DCF2FF',
     },
     welcome: {
         fontSize: 20,

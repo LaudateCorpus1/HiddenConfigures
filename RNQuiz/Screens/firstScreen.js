@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
         // flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor:"#F5FCFF",
+        backgroundColor:"#DCF2FF",
         width:width
     },
     leftHalf: {
@@ -186,7 +186,7 @@ const styles = StyleSheet.create({
         // flex: 1,
         height: height,
         width: width,
-        backgroundColor: '#F5FCFF',
+        backgroundColor: '#DCF2FF',
 
     },
     titleText: {
