@@ -33,13 +33,12 @@ let content =
             {topic:"Wife",direction:1}, ],
     };
 
-let progress = 0;
 
 export default class SecondScreen extends Component {
 
     constructor(props){
         super(props);
-        this.shuffle(content);
+        content = this.shuffle(content);
         this.state = {
             progress: 0,
             percentage: 0,
@@ -51,6 +50,7 @@ export default class SecondScreen extends Component {
             let j = Math.floor(Math.random() * i);
             [a[i - 1], a[j]] = [a[j], a[i - 1]];
         }
+        return a;
     }
 
     static navigationOptions = {

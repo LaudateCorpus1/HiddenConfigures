@@ -43,8 +43,7 @@ export default class NativeAndroidButton extends Component{
                             Alert.alert(
                                 "Disclaimer",
                                 "Please take this subconcious bias quiz at your own discretion."+
-                                "There is research for and against the validity of the results of this test."+
-                                "Please follow this link to read more on this topic",
+                                "There is research for and against the validity of the results of this test.",
                                 [
                                     {text: "Decline", style:"cancel"},
                                     {text: "Accept", onPress: ()=> {navigate(destination);}}

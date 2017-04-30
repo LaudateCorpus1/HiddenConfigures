@@ -29,14 +29,13 @@ let content =
             {topic:"Profit",direction:1}, {topic:"Sales Consumer",direction:1}],
     };
 
-let progress = 0;
 
 export default class FirstScreen extends Component {
 
     constructor(props){
         super(props);
 
-        this.shuffle(content);
+        content = this.shuffle(content);
 
         this.state = {
             progress: 0,
@@ -53,6 +52,7 @@ export default class FirstScreen extends Component {
             let j = Math.floor(Math.random() * i);
             [a[i - 1], a[j]] = [a[j], a[i - 1]];
         }
+        return a;
     }
 
     updateProgress(idx){
@@ -123,7 +123,7 @@ export default class FirstScreen extends Component {
 
                     <Button
                         title="Start phase two"
-                        accessibilityLabel="Start Phase two"
+                        accessibilityLabel="Start phase one"
                         color="#841584"
                         onPress={this.start.bind(this)}
                         style={{elevation:12,marginTop:40}}/>

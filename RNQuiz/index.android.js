@@ -62,7 +62,7 @@ class HomeScreen extends Component {
                     <NativeAndroidButton
                         navigate={navigate}
                         destination="StartQuiz"
-                        text="Start this quiz"
+                        text="Start Quiz"
                         buttonStyle={indexStyles.middleButton}/>
                     <Text>{'\n\n'}</Text>
                     <NativeAndroidButton

@@ -22,12 +22,12 @@ export default class FinalScreen extends Component{
         return (
             <View style={styles.container}>
                 <Text style={styles.titleText}>
-                    Your Final Score is:
+                    Your Results:
                 </Text>
 
                 <Text style={styles.bodyText}>
                     {'\n\n\n\n'}
-                    75%
+                    Moderate Association between 'Male' and 'Computing'
                 </Text>
 
                 <NativeAndroidButton

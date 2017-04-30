@@ -25,7 +25,7 @@ export default class PastResultsScreen extends Component{
 
                     <Text>{'\n'}</Text>
 
-                    <Text style={styles.text}>Score: 80%</Text>
+                    <Text style={styles.text}>Results: Moderate Association between 'Female' and 'Computing'</Text>
                 </View>
                 <View style={styles.item}>
 
@@ -33,7 +33,7 @@ export default class PastResultsScreen extends Component{
 
                     <Text>{'\n'}</Text>
 
-                    <Text style={styles.text}>Score: 65%</Text>
+                    <Text style={styles.text}>Results: Moderate Association between 'Female' and 'Computing'</Text>
                 </View>
             </View>
 
