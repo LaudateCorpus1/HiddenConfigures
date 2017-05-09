@@ -115,7 +115,7 @@ export default class SecondScreen extends Component {
 
 }
 
-var {height, width} = Dimensions.get('window');
+let {height, width} = Dimensions.get('window');
 const styles = StyleSheet.create({
     container: {
         flex: 1,

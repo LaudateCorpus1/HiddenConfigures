@@ -42,15 +42,6 @@ class HomeScreen extends Component {
         title: 'HiddenConfigures',
     } ;
 
-
-    _onButtonPress(event){
-
-        event.preventDefault();
-
-        navigate('Results');
-    }
-
-
     render() {
 
         const { navigate } = this.props.navigation;

@@ -44,7 +44,7 @@ export default class FirstScreen extends Component {
         }
     }
     static navigationOptions = {
-        title: 'HiddenConfigures',
+        title: 'First Phase',
     } ;
 
     shuffle(a) {
