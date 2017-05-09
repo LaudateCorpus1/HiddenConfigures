@@ -1,5 +1,5 @@
 /**
- * Created by Philip Bedward on 4/29/17.
+ * Created by Philip Bedward on 5/8/17.
  */
 import React, { Component } from 'react';
 import {
@@ -20,18 +20,22 @@ import Flix from '../components/Flix';
 
 let content =
     {
-        leftCat: "Male",
-        rightCat: "Female",
+        leftCat: "Male or Computing",
+        rightCat: "Female or Economics",
         items: [{topic:"Man",direction:-1}, {topic:"Son",direction:-1}, {topic:"Father",direction:-1},
             {topic:"Boy",direction:-1}, {topic:"Uncle",direction:-1}, {topic:"Grandpa",direction:-1},
-            {topic:"Husband",direction:-1},
+            {topic:"Husband",direction:-1},{topic:"IT",direction:-1}, {topic:"Website",direction:-1}, {topic:"Programming",direction:-1},
+            {topic:"Code",direction:-1}, {topic:"Laptop",direction:-1}, {topic:"Processor",direction:-1},
+            {topic:"Hard Drive",direction:-1},
             {topic:"Woman",direction:1}, {topic:"Daughter",direction:1}, {topic:"Mother",direction:1},
             {topic:"Girl",direction:1}, {topic:"Aunt",direction:1}, {topic:"Grandma",direction:1},
-            {topic:"Wife",direction:1}, ],
+            {topic:"Wife",direction:1},{topic:"Supply",direction:1}, {topic:"Stocks",direction:1}, {topic:"Demand",direction:1},
+            {topic:"Inflation",direction:1}, {topic:"Business",direction:1}, {topic:"Market",direction:1},
+            {topic:"Profit",direction:1}, {topic:"Sales Consumer",direction:1} ],
     };
 
 
-export default class SecondScreen extends Component {
+export default class ThirdScreen extends Component {
 
     constructor(props){
         super(props);
@@ -52,7 +56,7 @@ export default class SecondScreen extends Component {
     }
 
     static navigationOptions = {
-        title: 'Second Phase',
+        title: 'Third Phase',
     } ;
 
     updateProgress(idx){
@@ -71,18 +75,18 @@ export default class SecondScreen extends Component {
         let {navigate} =this.props.navigation;
 
         if (this.state.percentage >= 100){
-            navigate("ThirdPhase");
+            navigate("FourthPhase");
         }
 
         if (!this.state.started){
             return (<View style={styles.container}>
-                                <Button
-                                    title="Start phase two"
-                                    accessibilityLabel="Start Phase two"
-                                    color="#841584"
-                                    onPress={this.start.bind(this)}
-                                    style={{elevation:12}}/>
-                            </View>);
+                <Button
+                    title="Start phase three"
+                    accessibilityLabel="Start Phase Three"
+                    color="#841584"
+                    onPress={this.start.bind(this)}
+                    style={{elevation:12}}/>
+            </View>);
         }
         else{
             return( <View style={styles.container}>
@@ -115,7 +119,7 @@ export default class SecondScreen extends Component {
 
 }
 
-var {height, width} = Dimensions.get('window');
+let {height, width} = Dimensions.get('window');
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -167,4 +171,3 @@ const styles = StyleSheet.create({
 
 
 });
-

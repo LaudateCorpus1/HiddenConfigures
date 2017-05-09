@@ -29,6 +29,8 @@ import FinalScreen from './Screens/FinalScreen';
 import Flix from './components/Flix';
 import indexStyles from './stylesheets';
 import ResultsAfterTestScreen from "./Screens/ResultsAfterTestScreen";
+import ThirdScreen from "./Screens/thirdScreen";
+import FourthScreen from "./Screens/fourthScreen";
 
 
 class HomeScreen extends Component {
@@ -136,6 +138,8 @@ export const QuizApp = StackNavigator({
     Help: {screen: HelpScreen},
     About: {screen: DisclaimerScreen},
     SecondPhase: {screen:SecondScreen},
+    ThirdPhase: {screen:ThirdScreen},
+    FourthPhase: {screen: FourthScreen},
     LastPhase: {screen: FinalScreen},
     QuizResults: {screen: ResultsAfterTestScreen}
 });
